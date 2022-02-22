@@ -4,7 +4,7 @@ import "./Homepage.css";
 const HomePage = () => {
   return (
     <section>
-      <h2>Please Choose A Client:</h2>
+      <h2 className="secondary-header">Please Choose A Client:</h2>
       <ul>
         <Link to="/clients/1" className="li-items">
           Client 1
@@ -16,7 +16,7 @@ const HomePage = () => {
           Client 3
         </Link>
       </ul>
-      <button className="admin-btn">I'm An Admin!</button>
+      <button onClick={() => window.location.href = "http://localhost:8080/admin"} className="admin-btn">I'm An Admin!</button> 
     </section>
   );
 };

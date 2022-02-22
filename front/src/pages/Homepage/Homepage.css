@@ -2,8 +2,8 @@
 .li-items {
     color: var(--main-color);
     text-decoration: none;
-    font-size: 19px;
-    border: 2px solid black;
+    font-size: 21px;
+    border: 2px solid var(--main-color);
     margin: 20px;
     padding: 60px 40px;
     border-radius: 80px;
@@ -19,34 +19,60 @@ ul {
     top: 100px;
 }
 
-.admin-btn {
-    color: beige;
-    margin-top: 400px;
+.admin-btn , .back-home-btn {
     position: relative;
-    border: 2px solid var(--bg-color);
-    background-color: var(--main-color);
+    text-decoration: none;
     border-radius: 14px;
     width: 300px;
-    height: 60px;
     font-size: 22px;
     cursor: pointer;
     display:inline-block;
-}
-
-.admin-btn:hover {
-    -webkit-transition:0.5s all ease;
-    transition:0.5s all ease;
-    background-color: rgb(172, 157, 139);
+    background-color: rgb(201, 187, 171);
     color: var(--main-color);
-    border: 1px solid var(--main-color);
+    border: 3px solid var(--main-color);
+}
+
+.admin-btn {
+    margin-top: 400px;
+    height: 60px;
+}
+
+.back-home-btn {
+    height: 40px;
+    padding: 8px 0 0 0;
+    margin-bottom: 20px;
+}
+
+.admin-btn:hover, .back-home-btn:hover {
+    -webkit-transition:0.8s all ease;
+    transition:0.8s all ease;
+    left:0;
+    right:0;
+    opacity:1;
+    border: 3px solid beige;
+    background-color: var(--main-color);
+    color: beige;
+}
+
+.admin-btn:focus , .back-home-btn:focus {
+    transition:0.8s all ease;
     left:0;
     right:0;
     opacity:1;
 }
 
-.admin-btn:focus {
-    transition:0.5s all ease;
-    left:0;
-    right:0;
-    opacity:1;
+/* Media Queries For a Responsive Design: */
+
+@media screen and (max-width: 625px) {
+    ul {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+    li {
+        padding: 5px;
+    }
+    button {
+        margin-bottom: 20px;
+    }
 }

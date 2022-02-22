@@ -7,7 +7,7 @@ import NotFound from './components/NotFound/NotFound';
 const App = () => {
   return(
     <div className="App">
-      <h1>Commercials</h1>
+      <h1 id="main-head">Commercials</h1>
       <Routes>
         <Route path='/' element={<Navigate to='/clients'/>}/>
         <Route path='/clients' element={<Homepage />}/>

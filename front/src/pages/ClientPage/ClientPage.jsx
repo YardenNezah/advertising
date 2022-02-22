@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState, useEffect, useCallback } from "react";
 import NotFound from "../../components/NotFound/NotFound";
 import Commercial from "../../components/Commercial/Commercial";
@@ -27,7 +28,10 @@ const ClientPage = () => {
       .get(`http://localhost:8080/clients/${params.id}`)
       .then((res) => {
         setCommercials(res.data);
-      });
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }, [params]);
 
   useEffect(() => {
@@ -39,6 +43,8 @@ const ClientPage = () => {
       <h2>Client Details For Page Number:</h2>
       <span class="page-id">{params.id}</span>
       {commercials ? <Commercial commercials={commercials} /> : <NotFound />}
+      <Link className="back-home-btn" to="/"> Back to home page</Link>
+
     </div>
   );
 };

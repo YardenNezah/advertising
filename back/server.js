@@ -6,7 +6,7 @@ app.use(express.json());
 app.use(cors());
 const PORT = 8080;
 const mongoose = require('mongoose');
-const MONGO_URL = "mongodb://localhost:27017/mydatabase";
+const MONGO_URL = "mongodb+srv://yardentsaraf:Yarden9082@cluster0.auaij.mongodb.net/adsProject?retryWrites=true&w=majority";
 
 const AdminBro = require('admin-bro');
 const mongooseAdminBro = require('@admin-bro/mongoose');
@@ -14,6 +14,7 @@ const expressAdminBro = require('@admin-bro/express');
 
 const webSocketServer = require('websocket').server;
 const http = require('http');
+const path = require('path');
 const server = http.createServer();
 server.listen(8000);
 const wsServer = new webSocketServer({
@@ -47,6 +48,7 @@ wsServer.on('request', function (request) {
         insertClient(screenNumber,userID);
     })
 });
+
 const run = async (req,res) => {
     await app.listen(PORT, () => {
         console.log(`Listening at port:${PORT}`);
@@ -109,6 +111,14 @@ const insertClient = (id,userID) => {
         if (err) throw err;
     })
 }
+
+app.use(express.static(path.join(__dirname, "..", "front", "build")))
+app.use((req,res,next) => {
+    res.sendFile(path.join(__dirname, "..", "front", "build"))
+})
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "front", "build", "index.html"))
+})
 app.get('/clients/:id', (req, res) => {
     return Commercial.find({
         clientList: Number(req.params.id%3 +1)
