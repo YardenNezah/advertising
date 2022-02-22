@@ -1,0 +1,52 @@
+
+.li-items {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 19px;
+    border: 2px solid black;
+    margin: 20px;
+    padding: 60px 40px;
+    border-radius: 80px;
+    background-color: beige;
+}
+
+li:hover, .li-items:hover{
+    color: var(--bg-color);
+} 
+
+ul {
+    position: relative;
+    top: 100px;
+}
+
+.admin-btn {
+    color: beige;
+    margin-top: 400px;
+    position: relative;
+    border: 2px solid var(--bg-color);
+    background-color: var(--main-color);
+    border-radius: 14px;
+    width: 300px;
+    height: 60px;
+    font-size: 22px;
+    cursor: pointer;
+    display:inline-block;
+}
+
+.admin-btn:hover {
+    -webkit-transition:0.5s all ease;
+    transition:0.5s all ease;
+    background-color: rgb(172, 157, 139);
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+    left:0;
+    right:0;
+    opacity:1;
+}
+
+.admin-btn:focus {
+    transition:0.5s all ease;
+    left:0;
+    right:0;
+    opacity:1;
+}
