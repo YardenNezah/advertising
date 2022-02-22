@@ -136,7 +136,7 @@ const Admin = mongoose.model('Admin', mongoose.Schema({
   const AdminBroOptions = {
     resources: [Client, Commercial, {resource: Admin, options:{actions: {bulkDelete: {isVisible: false},new: {isVisible:false}, delete: {isVisible:false}}}} ],
     branding: {
-        logo: "https://logos.textgiraffe.com/logos/logo-name/Nam-designstyle-summer-m.png",
+        logo: "",
         companyName: "Commercials"
     }
   }
